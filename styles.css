@@ -284,3 +284,70 @@ footer {
     from { transform: translateY(100px); }
     to { transform: translateY(0); }
 }
+
+
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9em; /* Scale down font size slightly */
+        padding: 10px;
+        background-size:
+            25px 25px,
+            25px 25px,
+            20px 20px,
+            30px 30px,
+            100% 100%;
+    }
+
+    .main-title {
+        font-size: 2em; /* Smaller main title */
+        margin-top: 1em;
+    }
+
+    .sub-title {
+        font-size: 1.2em; /* Adjust sub-title size */
+        margin-top: 0.5em;
+    }
+
+    .scroll-banner {
+        font-size: 0.8em; /* Reduce banner text size */
+        padding: 5px 0;
+    }
+
+    .cards {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center cards horizontally */
+        justify-content: center; /* Center cards vertically if needed */
+        gap: 1em; /* Adjust spacing between cards */
+        margin-top: 1em;
+        padding-bottom: 3em;
+    }
+
+    .card {
+        width: 80%; /* Ensure the cards scale down proportionally */
+        font-size: 1em;
+        padding: 0.8em;
+    }
+
+    .song-btn {
+        width: 2.5em; /* Smaller button size */
+        height: 2.5em;
+        font-size: 1.2em;
+        bottom: 8px;
+        right: 8px;
+    }
+
+    .celebrate-btn {
+        width: 10em; /* Adjust button size */
+        height: 3em;
+        font-size: 1em; /* Reduce text size */
+    }
+
+    footer {
+        font-size: 0.9em; /* Smaller footer text */
+        bottom: 5px;
+    }
+
+    .loading-screen {
+        font-size: 1.5em; /* Adjust loading text size */
+    }
+}
