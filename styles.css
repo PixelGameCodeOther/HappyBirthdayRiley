@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Sugarpunch';
+    src: url('SugarpunchDEMO.otf') format('opentype');
+}
+body {
+    font-family: 'Sugarpunch', sans-serif;
+    background: 
+        /* Diagonal slices */
+        radial-gradient(
+            circle at 100% 50%,
+            #ffa726 0% 2%,  /* Neon orange */
+            #ffd54f 3% 5%,  /* Neon yellow */
+            transparent 6%
+        ),
+        /* Offset dots */
+        radial-gradient(
+            circle at 0% 50%,
+            #ffa726 0% 2%,  /* Neon orange */
+            #ffd54f 3% 5%,  /* Neon yellow */
+            transparent 6%
+        ),
+        /* Wave-like pattern */
+        radial-gradient(ellipse at 50% 0%, #ff4081 0% 3%, transparent 4%) 10px 10px, /* Neon pink */
+        /* Scattered elements */
+        radial-gradient(
+            circle at 50% 50%,
+            #ffd54f 0% 1%,  /* Neon yellow */
+            #ffa726 2% 3%,  /* Neon orange */
+            #ff4081 4% 5%,  /* Neon pink */
+            transparent 6%
+        )
+        20px 20px,
+        /* Background texture */
+        repeating-linear-gradient(
+            45deg,
+            #000000, /* Dark background */
+            #000000 10px,
+            #000000 10px,
+            #000000 20px
+        );
+    background-size:
+        50px 50px,
+        50px 50px,
+        40px 40px,
+        60px 60px,
+        100% 100%;
+    animation: shift 15s linear infinite;
+    color: #000000;
+    overflow: hidden;
+}
+
+@keyframes shift {
+    0% {
+        background-position:
+            0 0,
+            0 0,
+            10px 10px,
+            20px 20px,
+            0 0;
+    }
+    100% {
+        background-position:
+            50px 50px,
+            -50px -50px,
+            60px 60px,
+            80px 80px,
+            0 0;
+    }
+}
+
+@keyframes move {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+}
+
+.scroll-banner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #ffb74d;
+    color: #ffb74d;
+    padding: 10px 0;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-shadow: 0 0 5px #ffd54f, 0 0 10px #ffd54f;
+}
+
+.scroll-banner p {
+    display: inline-block;
+    animation: scrollBanner 15s linear infinite;
+}
+
+@keyframes scrollBanner {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2em;
+    animation: fadeOut 3s forwards 2s;
+    color: #ffb74d;
+    text-shadow: 0 0 10px #ffa726, 0 0 20px #ffa726;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.main-content {
+    display: none;
+    text-align: center;
+    animation: fadeIn 1s forwards 3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.main-title {
+    font-size: 3em;
+    margin-top: 2em;
+    color: #000000;
+    animation: fadeInPop 2s ease-in-out, glow 2s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px #ffd54f, 0 0 20px #ffd54f, 0 0 30px #ffd54f;
+}
+
+@keyframes fadeInPop {
+    0% { opacity: 0; transform: scale(0.5); }
+    60% { opacity: 1; transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px #ffd54f, 0 0 20px #ffd54f, 0 0 30px #ffd54f; }
+    50% { text-shadow: 0 0 20px #ffd54f, 0 0 30px #ffd54f, 0 0 40px #ffd54f; }
+}
+
+.sub-title {
+    font-size: 1.5em;
+    margin-top: 1em;
+    animation: slideIn 1.5s ease-out, glow 2s ease-in-out infinite alternate;
+    color: #000000;
+    text-shadow: 0 0 10px #ffa726, 0 0 20px #ffa726;
+}
+
+@keyframes slideIn {
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+/* General styles omitted for brevity (reuse the base CSS provided earlier) */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.7em;
+    margin-top: 0em;
+    padding-bottom: 5em;
+}
+
+.card {
+    font-family: 'Sugarpunch', sans-serif;
+    width: 10em;
+    padding: 1em;
+    background: #ffa726;
+    color: #000000;
+    text-shadow: 0 0 5px #ffd54f, 0 0 10px #ffd54f;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 2em;
+    animation: flicker 2s ease-in-out infinite alternate;
+    animation: pulse 2s ease-in-out infinite alternate;
+    box-shadow: 0 0 10px #ffd54f, 0 0 20px #ffd54f;
+    text-shadow: 0 0 5px #ffd54f, 0 0 10px #ffd54f;
+
+
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 183, 77, 0.3);
+}
+
+.celebration-counter {
+    margin-top: 1em;
+    font-size: 1.5em;
+    color: #000000;
+    text-shadow: 0 0 10px #ffd54f, 0 0 20px #ffd54f;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.song-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: #ff5722;
+    color: #000000;
+    border: none;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px #ff5722, 0 0 20px #ff5722;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.song-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff5722, 0 0 30px #ff5722;
+}
+
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+.celebrate-btn {
+    width: 12em;
+    height: 4em;
+    border-radius: 2em;
+    background: #ffa726;
+    border: 2px solid #ffa726;
+    color: #000000;
+    font-family: 'Sugarpunch', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2em auto;
+    box-shadow: 0 0 10px #ffd54f, 0 0 20px #ffd54f;
+    text-shadow: 0 0 5px #ffd54f, 0 0 10px #ffd54f;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.celebrate-btn:hover {
+    box-shadow: 0 0 20px #ffd54f, 0 0 30px #ffd54f;
+    transform: translateY(-2px);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #000000;
+    font-size: 1.1em;
+    animation: slideIn 1s ease-in, glow 2s ease-in-out infinite alternate;
+    text-shadow: 0 0 5px #ffa726, 0 0 10px #ffa726;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(100px); }
+    to { transform: translateY(0); }
+}

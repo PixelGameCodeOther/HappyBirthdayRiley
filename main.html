@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Riley<</title>
+    <link rel="shortcut icon" type="='x-icon" href="logo.jpeg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Scrolling Banner at the Top -->
+    <div class="scroll-banner" id="scrollBanner">
+        <p id="countdownMessage">Website will be put down later, enjoy while it lasts! </p>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading">
+        <h1>. . .</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <h1 class="main-title">Happy Birthday to Riley</h1>
+        <p class="sub-title">Join the celebration!</p>
+
+        <!-- Confetti Canvas -->
+        <canvas id="confettiCanvas"></canvas>
+
+        <!-- Interactive Cards Section -->
+        <div class="cards">
+            <button class="card">Favorite Meme : The Drink</button>
+            <button class="card">He's NPC line : Were You Born to Hate</button>
+            <button class="card">18-Year-Old Trial Has Expired : Riley Ramos</button>
+        </div>
+
+        <!-- Celebrate Button -->
+        <button class="celebrate-btn" onclick="startFireworks()">Celebrate!</button>
+        <p class="celebration-counter">Celebrations: <span id="celebration-count">0</span></p>
+
+        <!-- Footer -->
+        <footer>
+            Made for Riley, anyone else wait till your turn!
+        </footer>
+    </div>
+
+    <!-- Song Button -->
+    <button class="song-btn" onclick="playSong()">🎵 Play Song</button>
+
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script> <!-- Canvas Confetti -->
+
+</body>
+</html>
